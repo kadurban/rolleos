@@ -1,0 +1,56 @@
+.LangSelector {
+  position: relative;
+  text-align: left;
+  padding: 10px 10px 10px;
+}
+
+.column-right .LangSelector {
+  width: 100%;
+}
+
+.LangSelector-wrap-inner {
+  position: relative;
+}
+
+/*.footer .LangSelector {
+  float: right;
+}*/
+
+.LangSelector-flag {
+  width: 18px;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  pointer-events: none;
+}
+
+.LangSelector-label {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.LangSelector-select {
+  padding: 0 5px 0 30px;
+  height: calc(1.55rem + 2px) !important;
+  font-size: 12px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  display: inline-block;
+  box-shadow: none;
+}
+.LangSelector-select:active,
+.LangSelector-select:focus {
+  background-color: transparent;
+}
+
+.dark .LangSelector-select:focus {
+  background-color: transparent;
+}
+.dark .LangSelector-select {
+  color: #cacaca;
+}
+.dark .LangSelector-select option {
+  color: #000;
+}

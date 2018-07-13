@@ -1,0 +1,77 @@
+.loader {
+  animation-name: begin;
+  animation-duration: 1.5s;
+}
+
+.loader.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.loader.overlay svg {
+  transform: scale(1.8);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -19px 0 0 -19px;
+}
+
+.loader-title {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 100px;
+  text-align: center;
+  margin-left: -50px;
+  text-transform: uppercase;
+}
+
+@keyframes begin {
+  0%   {
+    opacity: 0;
+  }
+  60%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dark .loader-spinner {
+  border: 3px solid #f17f01;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.loader-spinner {
+  border-radius: 1000px;
+  border: 3px solid #f17f01;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 999;
+  width: 60px;
+  height: 60px;
+  margin: -30px auto auto -30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes spin {
+  0%   {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

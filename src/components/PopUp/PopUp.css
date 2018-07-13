@@ -1,0 +1,60 @@
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 200px;
+  padding-top: 5px;
+  text-align: left;
+  animation-name: popup-show;
+  animation-duration: .2s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+  background-color: #f1f1f1;
+  border-radius: 2px;
+}
+@keyframes popup-show {
+  0%   {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark .popup {
+  animation-name: popup-show;
+  animation-duration: .2s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+  background-color: #2f2f2f;
+}
+
+.dark .popup .btn-link {
+  color: #cacaca;
+}
+
+.popup-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .4;
+}
+
+.popup-close-left {
+  right: auto;
+  left: 0;
+}
+
+.popup-close i {
+  margin-left: 0 !important;
+}
+
+.popup .btn {
+  text-align: left;
+}
+
+.popup .btn i {
+  margin-right: 10px;
+  margin-left: 0;
+}
