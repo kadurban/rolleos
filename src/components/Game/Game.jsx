@@ -4,15 +4,18 @@ import Slider from 'rc-slider';
 import './Game.css'
 import 'rc-slider/assets/index.css';
 
+import gameStore from '../../store/game';
+import appStore from '../../store/app';
+
 @observer
 export default class Game extends Component {
-  componentDidMount() {
-    store.game.setProfit()
+  async componentDidMount() {
+    gameStore.setProfit()
   }
 
   render() {
     return(
-      <form className="game" onSubmit={store.game.roll}>
+      <form className="game" onSubmit={gameStore.roll}>
         <div className="row">
           <div className="col-12">
             <div className="form-group">
@@ -22,11 +25,11 @@ export default class Game extends Component {
             <div className="form-group">
               <div className="bet-size-control">
                 <label>Bet size</label>
-                <input className="form-control" type="text" value={store.game.betSize} onChange={(e) => store.game.setBet(e.target.value)}/>
+                <input className="form-control" type="text" value={gameStore.betSize} onChange={(e) => gameStore.setBet(e.target.value)}/>
                 <div>
-                  <Slider min={0.1} max={store.game.maxBet} step={0.1}
-                          onChange={(value) => store.game.setBet(value)}
-                          value={store.game.betSize}/>
+                  <Slider min={0.1} max={gameStore.maxBet} step={0.1}
+                          onChange={(value) => gameStore.setBet(value)}
+                          value={gameStore.betSize}/>
                 </div>
               </div>
             </div>
@@ -34,11 +37,11 @@ export default class Game extends Component {
             <div className="form-group">
               <div className="chance-control">
                 <label>Chance of winning</label>
-                <input className="form-control" type="text" value={store.game.chance} onChange={(e) => store.game.setChance(e.target.value)}/>
+                <input className="form-control" type="text" value={gameStore.chance} onChange={(e) => gameStore.setChance(e.target.value)}/>
                 <div>
                   <Slider min={1} max={98} step={1}
-                          onChange={(value) => store.game.setChance(value)}
-                          value={store.game.chance}
+                          onChange={(value) => gameStore.setChance(value)}
+                          value={gameStore.chance}
                           marks={{1: '1%', 50: '50%', 98: '98%'}}/>
                 </div>
               </div>
@@ -46,18 +49,22 @@ export default class Game extends Component {
             <hr/>
             <div className="form-group results-preview">
               <div className="results-preview-chance">
-                Roll under <span>{store.game.chance + 1}</span> <br/>
+                Roll under <span>{gameStore.chance + 1}</span> <br/>
               </div>
               <div className="results-preview-betsize">
-                with a wager of <span>{store.game.betSize} EOS</span> <br/>
+                with a wager of <span>{gameStore.betSize} EOS</span> <br/>
               </div>
               <div className="results-preview-profit">
-                for a profit of <span>{store.game.profit} EOS</span>
+                for a profit of <span>{gameStore.profit} EOS</span>
               </div>
             </div>
-            {store.app.scatter ? (
+            {appStore.scatter ? (
               <button className="btn btn-warning btn-lg btn-block game-button" type="submit">
-                Roll
+                {appStore.identity ? (
+                  'Roll'
+                ) : (
+                  'Login'
+                )}
               </button>
             ) : (
               <button className="btn btn-warning btn-lg btn-block game-button" type="submit" disabled={true}>

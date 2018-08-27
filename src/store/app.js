@@ -1,5 +1,8 @@
 import { observable, action } from 'mobx'
 
+import appStore from '../store/app'
+import gameStore from '../store/game'
+
 class App {
   @observable loading = true
   @observable scatter = null
@@ -8,12 +11,14 @@ class App {
   @action ensureScatter = () => {
     document.addEventListener('scatterLoaded', () => {
       this.scatter = window.scatter
-      this.ensureIdentity()
+      window.scatter = null
+      gameStore.setMaxBet()
+      //this.ensureIdentity()
     })
   }
 
   @action ensureIdentity = () => {
-    this.identity = store.app.scatter.identity
+    this.identity = appStore.scatter.identity
   }
 }
 

@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import Header from "../components/Header/Header";
+import LatestBets from "../components/LatestBets/LatestBets";
 import Game from "../components/Game/Game";
 import Footer from "../components/Footer/Footer";
 import Logo from "./eos-logo.png";
-
 
 @observer
 export default class MainView extends Component {
@@ -35,7 +35,7 @@ export default class MainView extends Component {
           </div>
           <div className="col-8">
             <Header/>
-            <div style={{marginTop: '15px'}}>
+            <div style={{backgroundColor: 'rgba(255, 255, 255, .5)', padding: '25px'}}>
               <Route {...this.props} render={history => <this.props.view {...history}/>}/>
             </div>
           </div>

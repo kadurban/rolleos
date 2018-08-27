@@ -1,0 +1,17 @@
+{
+  "name": "rolleos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "watcher.js",
+  "scripts": {
+    "start": "node ./watcher.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "demux": "^1.0.5",
+    "demux-eos": "^1.0.1",
+    "ws": "^6.0.0"
+  }
+}
