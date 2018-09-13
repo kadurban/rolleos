@@ -58,23 +58,13 @@ export default class Game extends Component {
                 for a profit of <span>{gameStore.profit} EOS</span>
               </div>
             </div>
-            {appStore.scatter ? (
-              <button className="btn btn-warning btn-lg btn-block game-button" type="submit">
-                {appStore.identity ? (
-                  'Roll'
-                ) : (
-                  'Login'
-                )}
-              </button>
-            ) : (
-              <button className="btn btn-warning btn-lg btn-block game-button" type="submit" disabled={true}>
-                Roll
-                <br/>
-                <small>
-                  Scatter wallet was not detected
-                </small>
-              </button>
-            )}
+            <button className="btn btn-warning btn-lg btn-block game-button" type="submit">
+              {appStore.scatter ? (
+                appStore.identity ? 'Roll' : 'Login'
+              ) : (
+                <small>Scatter wallet was not detected</small>
+              )}
+            </button>
           </div>
         </div>
       </form>

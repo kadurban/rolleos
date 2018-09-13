@@ -4,7 +4,7 @@ class LatestBets {
   @observable bets = []
 
   @action wsClientInit = () => {
-    const ws = new WebSocket("ws://localhost:8080/");
+    const ws = new WebSocket("ws://62.76.44.36:8080/");
 
     ws.onmessage = (e) => this.updateBetList(e.data)
 
