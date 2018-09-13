@@ -3,6 +3,7 @@ const session = require('koa-session')
 const koaBody = require('koa-body')
 const config = require('./package.json').config
 const mysql = require('rslib').mysql
+const actionWatcher = require('./watcher')
 
 const transform = require('./middleware/transform')
 const errorHandler = require('./middleware/errorHandler')
@@ -49,6 +50,7 @@ async function init () {
 
   app.listen(config.port)
   console.log(`App running on port ${config.port}`)
+  actionWatcher.watch()
 
 }
 

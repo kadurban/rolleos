@@ -16,6 +16,11 @@
   "license": "ISC",
   "dependencies": {
     "async-request": "^1.2.0",
+    "child-process-async": "^1.0.1",
+    "demux": "^1.0.5",
+    "demux-eos": "^1.0.1",
+    "eosjs": "^16.0.6",
+    "hex2bin": "^1.0.2",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
     "koa-router": "^7.4.0",
@@ -23,6 +28,7 @@
     "koa-static": "^5.0.0",
     "line-by-line": "^0.1.6",
     "node-env-run": "^3.0.2",
-    "rslib": "0.0.10"
+    "rslib": "0.0.10",
+    "ws": "^6.0.0"
   }
 }
