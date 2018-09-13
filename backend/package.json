@@ -1,17 +1,28 @@
 {
-  "name": "rolleos",
+  "name": "eos-emergency",
   "version": "1.0.0",
   "description": "",
-  "main": "watcher.js",
+  "main": "index.js",
+  "config": {
+    "port": 3001
+  },
   "scripts": {
-    "start": "node ./watcher.js"
+    "start": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "emergency-send": "nodenv emergency-send.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "demux": "^1.0.5",
-    "demux-eos": "^1.0.1",
-    "ws": "^6.0.0"
+    "async-request": "^1.2.0",
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.2",
+    "koa-static": "^5.0.0",
+    "line-by-line": "^0.1.6",
+    "node-env-run": "^3.0.2",
+    "rslib": "0.0.10"
   }
 }

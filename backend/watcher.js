@@ -29,10 +29,12 @@ const actionHandler = new ObjectActionHandler(
     {
       actionType: "eosio.token::transfer",
       updater: function (state, payload, blockInfo, context) {
-        console.log(payload.data.from, '->', payload.data.to, payload.data.quantity)
-        bets.unshift(payload.data)
-        if (bets.length > 10) bets.pop()
-        wss.broadcast(JSON.stringify(payload.data))
+        if (payload.data.to === 'eosbetdice11') {
+          console.log(payload.data.from, '->', payload.data.to, payload.data.quantity)
+          bets.unshift(payload.data)
+          if (bets.length > 10) bets.pop()
+          wss.broadcast(JSON.stringify(payload.data))
+        }
       }
     },
   ],
